@@ -1,0 +1,16 @@
+version: '2'
+services:
+  seleniumhub:
+    image: selenium/hub:2.53.0
+    ports:
+      - "4444:4444"
+
+  nodefirefox:
+    image: selenium/node-firefox:2.53.0
+    environment:
+    - HUB_PORT_4444_TCP_ADDR=seleniumhub
+
+  nodechrome:
+    image: selenium/node-chrome:2.53.0
+    environment:
+    - HUB_PORT_4444_TCP_ADDR=seleniumhub
