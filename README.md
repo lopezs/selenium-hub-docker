@@ -1,5 +1,5 @@
 # Selenium grid on docker
-
+ 
 Docker-compose file to start selenium grid with Chrome and Firefox browser nodes
 
 For more info about running selenium in docker see [https://github.com/SeleniumHQ/docker-selenium](https://github.com/SeleniumHQ/docker-selenium)
@@ -7,7 +7,6 @@ For more info about running selenium in docker see [https://github.com/SeleniumH
 ## Prerequisites
 
 1. [Docker engine](https://docs.docker.com/engine/installation/)
-
 2. [Docker compose](https://docs.docker.com/compose/install/)
 
 ## Installation
@@ -28,3 +27,12 @@ If you want to add more nodes:
 
     $ docker-compose scale nodefirefox=10 nodechrome=10
 
+
+## VNC
+
+You can watch your tests run using a vnc client e.g (TightVNC): 
+
+    $ vncviewer localhost:5901  # Firefox
+    $ vncviewer localhost:5902  # Chrome
+
+When you are prompted for the password it is "secret".
